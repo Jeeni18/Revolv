@@ -1,0 +1,185 @@
+/* Header.css */
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #23446e;
+  /* background: linear-gradient(to bottom, #23446e,#396bad,white); */
+  /* background: linear-gradient(to bottom, #11335f,white); Royal Blue to Platinum */
+  /* background: linear-gradient(to bottom, #356090, #BDC3C7); Royal Blue to Platinum */
+
+
+
+
+
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+}
+
+
+.title {
+  /* font-family: 'Pacifico', cursive; */
+  /* font-family: 'Georgia Pro', Georgia, serif; */
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 5rem;
+  font-weight: normal;
+  letter-spacing: 5px;
+  margin: 5px 0;
+}
+
+.tagline {
+  font-size: 1.6rem;
+  margin: 20px 0;
+  color: white;
+}
+
+.cta-button {
+  background-color: orangered;
+  /* background-color: #23b5d3; */
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cta-button:hover {
+  background-color: orange;
+}
+
+/* Keep your existing header styles and add these new styles */
+
+/* Navigation Bar */
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.nav-bar.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.8rem;
+  color: white;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.nav-bar.scrolled .nav-links a {
+  color: #333;
+}
+
+.nav-links a:hover {
+  background: rgba(255, 127, 50, 0.2);
+  color: #356098;
+}
+
+/* Update existing header styles */
+.header {
+  padding-top: 70px; /* Add padding to account for fixed nav */
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .nav-content {
+    padding: 0 1rem;
+  }
+
+  .nav-logo {
+    font-size: 1.5rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+/* Mobile menu for very small screens */
+@media (max-width: 480px) {
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    width: 100%;
+    text-align: center;
+    padding: 0.8rem;
+  }
+}
+
+/* Animation for navigation items */
+.nav-links a {
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #356098;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-links a:hover::after {
+  width: 80%;
+}
