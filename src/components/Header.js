@@ -43,7 +43,7 @@ const Header = ({ onGetStarted }) => {
         {/* <h1 className="title">Revolv</h1> */}
         {/* <p className="tagline">Smart Tools for Smart Businesses</p> */}
         <button className="cta-button" onClick={onGetStarted}>
-          Get Started
+          Get started
         </button>
       </div>
     </>
