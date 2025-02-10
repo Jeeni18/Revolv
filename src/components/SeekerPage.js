@@ -267,7 +267,7 @@ const SeekerPage = () => {
             id="jobType"
             value={formData.jobType}
             onChange={handleChange}
-            placeholder="e.g.,Social Media Manager"
+            placeholder="e.g.Social Media Manager"
             className="text-input"
             required
           />
