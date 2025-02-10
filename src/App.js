@@ -366,6 +366,74 @@
 
 // export default App;
 
+// import React, { useState } from 'react';
+// import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+// import './App.css';
+// import Header from './components/Header';
+// import Features from './components/Features';
+// import Testimonials from './components/Testimonials';
+// import Footer from './components/Footer';
+// import AuthModal from './components/AuthModal';
+// import UserInfoForm from './components/UserInfoForm';
+// import QueriesPage from './components/QueriesPage';
+// import SeekerPage from './components/SeekerPage'; // Import the new SeekerPage
+// import ResultDisplay from './components/ResultDisplay';
+
+// const App = () => {
+//   const [isModalOpen, setIsModalOpen] = useState(false);
+//   const [isSignedUp, setIsSignedUp] = useState(false);
+//   const [userType, setUserType] = useState('business'); // Track selected user type
+
+//   const handleGetStarted = () => {
+//     setIsModalOpen(true);
+//   };
+
+//   const closeModal = () => {
+//     setIsModalOpen(false);
+//   };
+
+//   return (
+//     <Router>
+//       <div className="App">
+//         <Routes>
+//           <Route
+//             path="/"
+//             element={
+//               <>
+//                 <Header onGetStarted={handleGetStarted} />
+//                 <Features />
+//                 <Testimonials />
+//                 <Footer />
+//                 {isModalOpen && (
+//                   <AuthModal
+//                     closeModal={closeModal}
+//                     setIsSignedUp={setIsSignedUp}
+//                     setUserType={setUserType} // Pass user type setter
+//                   />
+//                 )}
+//               </>
+//             }
+//           />
+//           <Route
+//             path="/userinfo"
+//             element={isSignedUp ? <UserInfoForm /> : <Navigate to="/" />}
+//           />
+//           <Route
+//             path="/queries"
+//             element={isSignedUp && userType === 'business' ? <QueriesPage /> : <Navigate to="/" />}
+//           />
+//           <Route
+//             path="/seeker"
+//             element={isSignedUp && userType === 'seeker' ? <SeekerPage /> : <Navigate to="/" />}
+//           />
+//         </Routes>
+//       </div>
+//     </Router>
+//   );
+// };
+
+// export default App;
+
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
@@ -376,12 +444,13 @@ import Footer from './components/Footer';
 import AuthModal from './components/AuthModal';
 import UserInfoForm from './components/UserInfoForm';
 import QueriesPage from './components/QueriesPage';
-import SeekerPage from './components/SeekerPage'; // Import the new SeekerPage
+import SeekerPage from './components/SeekerPage';
+import ResultDisplay from './components/ResultDisplay';
 
 const App = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSignedUp, setIsSignedUp] = useState(false);
-  const [userType, setUserType] = useState('business'); // Track selected user type
+  const [userType, setUserType] = useState('business');
 
   const handleGetStarted = () => {
     setIsModalOpen(true);
@@ -407,7 +476,7 @@ const App = () => {
                   <AuthModal
                     closeModal={closeModal}
                     setIsSignedUp={setIsSignedUp}
-                    setUserType={setUserType} // Pass user type setter
+                    setUserType={setUserType}
                   />
                 )}
               </>
@@ -424,6 +493,10 @@ const App = () => {
           <Route
             path="/seeker"
             element={isSignedUp && userType === 'seeker' ? <SeekerPage /> : <Navigate to="/" />}
+          />
+          <Route
+            path="/results"
+            element={isSignedUp && userType === 'business' ? <ResultDisplay /> : <Navigate to="/" />}
           />
         </Routes>
       </div>
