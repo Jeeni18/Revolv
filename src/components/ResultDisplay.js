@@ -176,6 +176,7 @@
 
 // export default ResultDisplay;
 
+
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './ResultDisplay.css';
@@ -185,21 +186,9 @@ const ResultDisplay = () => {
     const navigate = useNavigate();
     const { prediction, businessName } = location.state || { prediction: [], businessName: '' };
 
-    const handleBack = () => {
-        navigate('/queries');
-    };
-
-    const handleAISelection = (tool) => {
-        navigate('/with-ai', { 
-            state: { 
-                tool: tool, 
-                businessName: businessName 
-            } 
-        });
-    };
-
-    const handleHumanSelection = (tool) => {
-        navigate('/with-human', { 
+    const handleSelection = (tool, method) => {
+        const route = method === 'AI' ? '/with-ai' : '/with-human';
+        navigate(route, { 
             state: { 
                 tool: tool, 
                 businessName: businessName 
@@ -224,24 +213,24 @@ const ResultDisplay = () => {
                             <div className="recommendations-grid">
                                 {prediction.map((tool, index) => (
                                     <div key={index} className="recommendation-card">
-                                        <div className="tool-name">{tool}</div>
+                                        <div className="tool-name">Generate {tool}</div>
                                         <div className="implementation-options">
                                             <div className="option-box ai">
                                                 <h4>With AI</h4>
                                                 <button 
                                                     className="select-button"
-                                                    onClick={() => handleAISelection(tool)}
+                                                    onClick={() => handleSelection(`Generate ${tool}`, 'AI')}
                                                 >
-                                                    Select
+                                                    Select AI
                                                 </button>
                                             </div>
                                             <div className="option-box human">
                                                 <h4>With Human Help</h4>
                                                 <button 
                                                     className="select-button"
-                                                    onClick={() => handleHumanSelection(tool)}
+                                                    onClick={() => handleSelection(`Generate ${tool}`, 'Human')}
                                                 >
-                                                    Select
+                                                    Select Human
                                                 </button>
                                             </div>
                                         </div>
@@ -256,7 +245,7 @@ const ResultDisplay = () => {
                     )}
                 </div>
 
-                <button onClick={handleBack} className="back-button">
+                <button onClick={() => navigate('/queries')} className="back-button">
                     Back to Questionnaire
                 </button>
             </div>

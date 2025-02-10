@@ -523,6 +523,8 @@ import ResultDisplay from './components/ResultDisplay';
 import JobListingsPage from './components/JobListingsPage';
 import WithAIPage from './components/WithAIPage';
 import WithHumanPage from './components/WithHumanPage';
+import QRGenerationPage from './components/QRGenerationPage';
+import WebsiteLinkQRPage from './components/WebsiteLinkQRPage';
 
 
 const App = () => {
@@ -587,6 +589,14 @@ const App = () => {
           <Route
             path="/with-human"
             element={isSignedUp && userType === 'business' ? <WithHumanPage /> : <Navigate to="/" />}
+          />
+          <Route
+            path="/qr-generation"
+            element={isSignedUp && userType === 'business' ? <QRGenerationPage /> : <Navigate to="/" />}
+          />
+          <Route
+            path="/website-link-qr"
+            element={isSignedUp && userType === 'business' ? <WebsiteLinkQRPage /> : <Navigate to="/" />}
           />
 
         </Routes>
