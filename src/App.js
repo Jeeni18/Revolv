@@ -425,6 +425,8 @@ const App = () => {
             path="/seeker"
             element={isSignedUp && userType === 'seeker' ? <SeekerPage /> : <Navigate to="/" />}
           />
+
+
         </Routes>
       </div>
     </Router>

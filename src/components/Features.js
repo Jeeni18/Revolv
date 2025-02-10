@@ -3,7 +3,7 @@ import './Features.css';
 
 const Features = () => {
   return (
-    <section className="features">
+    <section id="features">
       <h1>Features</h1>
       <div className="feature-cards">
         <div className="feature-card">

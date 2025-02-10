@@ -1,39 +1,40 @@
-import React from 'react';
-import './Footer.css';
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import "./Footer.css"
+import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react"
 
 const Footer = () => {
   return (
+    <section id='contact'>
     <footer className="footer">
       <div className="footer-container">
         {/* Copyright */}
         <div className="footer-left">
-          <p>&copy; 2025 Revolv. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Resolv. All rights reserved.</p>
         </div>
 
-        {/* Contact Section */}
-        <div className="footer-middle">
-          <h4>Contact Us</h4>
-          <p>We’d love to hear from you! Reach out to us anytime.</p>
-          <ul className="contact-info">
-            <li><a href="mailto:support@revolv.com">support@revolv.com</a></li>
-            <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
-          </ul>
-        </div>
-
-        {/* Social Media Links */}
+        {/* Social Media Icons */}
         <div className="footer-right">
-          <h4>Follow Us</h4>
-          <div className="social-links">
-            <a href="https://www.facebook.com/revolv" target="_blank" rel="noopener noreferrer"><FaFacebook size={24} /></a>
-            <a href="https://twitter.com/revolv" target="_blank" rel="noopener noreferrer"><FaTwitter size={24} /></a>
-            <a href="https://www.linkedin.com/company/revolv" target="_blank" rel="noopener noreferrer"><FaLinkedin size={24} /></a>
-            <a href="https://www.instagram.com/revolv" target="_blank" rel="noopener noreferrer"><FaInstagram size={24} /></a>
-          </div>
+          <a href="#" className="social-icon">
+            <Facebook />
+            <span className="sr-only">Facebook</span>
+          </a>
+          <a href="#" className="social-icon">
+            <Twitter />
+            <span className="sr-only">Twitter</span>
+          </a>
+          <a href="#" className="social-icon">
+            <Linkedin />
+            <span className="sr-only">LinkedIn</span>
+          </a>
+          <a href="#" className="social-icon">
+            <Instagram />
+            <span className="sr-only">Instagram</span>
+          </a>
         </div>
       </div>
     </footer>
-  );
-};
+    </section>
+  )
+}
 
-export default Footer;
+export default Footer
+

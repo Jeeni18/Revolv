@@ -29,8 +29,8 @@ const Header = ({ onGetStarted }) => {
           </div>
           <div className="nav-links">
             <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-            <Link to="/contact">Contact Us</Link>
+            <a href="#features">About</a>
+            <a href="#contact">Contact Us</a>
           </div>
         </div>
       </nav>
