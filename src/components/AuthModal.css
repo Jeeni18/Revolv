@@ -45,7 +45,7 @@ form input {
 form button {
   width: 100%;
   padding: 10px;
-  background-color: #FF7F32;
+  background-color: #23446e;
   border: none;
   color: white;
   cursor: pointer;
@@ -53,12 +53,12 @@ form button {
 }
 
 form button:hover {
-  background-color: #FF7F32;
+  background-color: #3966a0;
 }
 
 p {
   text-align: center;
-  color: #FF7F32;
+  color: #1a314e;
   cursor: pointer;
   font-size: 14px;
 }
