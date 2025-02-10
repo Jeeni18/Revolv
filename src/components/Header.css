@@ -1,5 +1,4 @@
 /* Header.css */
-
 .header {
   display: flex;
   flex-direction: column;
@@ -7,23 +6,38 @@
   align-items: center;
   height: 100vh;
   background: #23446e;
-  /* background: linear-gradient(to bottom, #23446e,#396bad,white); */
-  /* background: linear-gradient(to bottom, #11335f,white); Royal Blue to Platinum */
-  /* background: linear-gradient(to bottom, #356090, #BDC3C7); Royal Blue to Platinum */
-
-
-
-
-
   text-align: center;
   color: white;
-  padding: 0 20px;
+  padding: 70px 20px 0;
 }
 
+.logo-container {
+  margin-bottom: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-logo {
+  max-width: 400px;
+  height: 300px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Animation for logo visibility */
+.header.visible .hero-logo {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.header:not(.visible) .hero-logo {
+  opacity: 0;
+  transform: translateY(20px);
+}
 
 .title {
-  /* font-family: 'Pacifico', cursive; */
-  /* font-family: 'Georgia Pro', Georgia, serif; */
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 5rem;
   font-weight: normal;
@@ -39,7 +53,6 @@
 
 .cta-button {
   background-color: orangered;
-  /* background-color: #23b5d3; */
   color: white;
   padding: 15px 30px;
   font-size: 1.5rem;
@@ -51,8 +64,6 @@
 .cta-button:hover {
   background-color: orange;
 }
-
-/* Keep your existing header styles and add these new styles */
 
 /* Navigation Bar */
 .nav-bar {
@@ -89,6 +100,11 @@
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
 }
 
+.nav-logo-img {
+  height: 50px;
+  width: auto;
+}
+
 .nav-links {
   display: flex;
   gap: 2rem;
@@ -101,6 +117,7 @@
   padding: 0.5rem 1rem;
   border-radius: 25px;
   transition: all 0.3s ease;
+  position: relative;
 }
 
 .nav-bar.scrolled .nav-links a {
@@ -112,9 +129,20 @@
   color: #356098;
 }
 
-/* Update existing header styles */
-.header {
-  padding-top: 70px; /* Add padding to account for fixed nav */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #356098;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-links a:hover::after {
+  width: 80%;
 }
 
 /* Mobile responsive styles */
@@ -134,6 +162,15 @@
   .nav-links a {
     font-size: 1rem;
     padding: 0.4rem 0.8rem;
+  }
+
+  .hero-logo {
+    max-width: 50%;
+    height: auto;
+  }
+
+  .title {
+    font-size: 3rem;
   }
 }
 
@@ -161,25 +198,4 @@
     text-align: center;
     padding: 0.8rem;
   }
-}
-
-/* Animation for navigation items */
-.nav-links a {
-  position: relative;
-}
-
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: #356098;
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
-}
-
-.nav-links a:hover::after {
-  width: 80%;
 }
