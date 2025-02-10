@@ -521,6 +521,9 @@ import QueriesPage from './components/QueriesPage';
 import SeekerPage from './components/SeekerPage';
 import ResultDisplay from './components/ResultDisplay';
 import JobListingsPage from './components/JobListingsPage';
+import WithAIPage from './components/WithAIPage';
+import WithHumanPage from './components/WithHumanPage';
+
 
 const App = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -577,6 +580,15 @@ const App = () => {
             path="/job-listings"
             element={isSignedUp && userType === 'seeker' ? <JobListingsPage /> : <Navigate to="/" />}
           />
+          <Route
+            path="/with-ai"
+            element={isSignedUp && userType === 'business' ? <WithAIPage /> : <Navigate to="/" />}
+          />
+          <Route
+            path="/with-human"
+            element={isSignedUp && userType === 'business' ? <WithHumanPage /> : <Navigate to="/" />}
+          />
+
         </Routes>
       </div>
     </Router>
