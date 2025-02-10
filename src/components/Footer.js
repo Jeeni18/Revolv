@@ -12,8 +12,8 @@ const Footer = () => {
               <h4>Contact Us</h4>
               <ul>
                 <li>contact@resolv.com</li>
-                <li>+1 (555) 123-4567</li>
-                <li>123 Business Ave, Suite 100</li>
+                <li>+977 987654321</li>
+                <li>Libali, Bhaktapur-08</li>
               </ul>
             </div>
 

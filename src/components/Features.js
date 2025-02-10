@@ -4,7 +4,7 @@ import './Features.css';
 const Features = () => {
   return (
     <section id="features">
-      <h1>Features</h1>
+      <h1>Powerful Features For Your Business</h1>
       <div className="feature-cards">
         <div className="feature-card">
           <h3>AI-Powered Recommendations</h3>
