@@ -446,6 +446,12 @@ import UserInfoForm from './components/UserInfoForm';
 import QueriesPage from './components/QueriesPage';
 import SeekerPage from './components/SeekerPage';
 import ResultDisplay from './components/ResultDisplay';
+import JobProposal from './components/JobProposal';
+import PostJobDashboard from './components/PostJobDashboard';
+import QRGenerationPage from './components/QRGenerationPage';
+import WebsiteLinkQRPage from './components/WebsiteLinkQRPage';
+import WithAIPage from './components/WithAIPage';
+import JobListingPage from './components/JobListingPage';
 
 const App = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -497,6 +503,24 @@ const App = () => {
           <Route
             path="/results"
             element={isSignedUp && userType === 'business' ? <ResultDisplay /> : <Navigate to="/" />}
+          />
+          <Route
+            path="/job-listings"
+            element={isSignedUp && userType === 'seeker' ? <JobListingPage /> : <Navigate to="/" />}
+          />
+           <Route path="/job-proposal" element={<JobProposal />} />
+           <Route path="/post-job-dashboard" element={<PostJobDashboard />} />
+           <Route
+            path="/qr-generation"
+            element={isSignedUp && userType === 'business' ? <QRGenerationPage /> : <Navigate to="/" />}
+          />
+          <Route
+            path="/website-link-qr"
+            element={isSignedUp && userType === 'business' ? <WebsiteLinkQRPage /> : <Navigate to="/" />}
+          />
+          <Route
+            path="/with-ai"
+            element={isSignedUp && userType === 'business' ? <WithAIPage /> : <Navigate to="/" />}
           />
         </Routes>
       </div>

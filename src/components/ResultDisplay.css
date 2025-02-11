@@ -260,14 +260,14 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 750px) {
     .implementation-options {
         flex-direction: column;
         gap: 8px;
     }
     
     .option-box {
-        width: 100%;
+        width: 80%;
     }
 }
 
