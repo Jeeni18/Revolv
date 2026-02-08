@@ -11,9 +11,9 @@
 
 ## Tech Stack
 
-- Python, TensorFlow / PyTorch for AI models  
+- Python 
 - Pandas, NumPy for data processing  
-- Flask / FastAPI (optional) for backend  
+- Flask for backend  
 - **React** for frontend  
 
 ## How to Use
